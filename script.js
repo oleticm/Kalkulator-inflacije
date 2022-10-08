@@ -1,4 +1,4 @@
-document.addEventListener("click", inflationCalculator);
+document.getElementById('btn').addEventListener("click", inflationCalculator);
 
 function inflationCalculator(){
     let stopaInflacije = document.querySelector('#stopaInflacije');
