@@ -1,19 +1,18 @@
-document.getElementById('btn').addEventListener("click", inflationCalculator);
+document.querySelector('#btn').addEventListener("click", inflationCalculator);
 
 function inflationCalculator(){
-    let stopaInflacije = document.querySelector('#stopaInflacije');
-    let novac = document.querySelector('#novac');
+
+    const stopaInflacije = parseFloat(document.querySelector('#inflationRate').value)
+
+    const money = parseFloat(document.querySelector('#money').value)
+
+    const years = parseFloat(document.querySelector('#years').value)
     
-    stopaInflacije = parseFloat(stopaInflacije.value);
-    novac = parseFloat(novac.value);
 
-    let godine = document.querySelector('#godine');
-    godine = parseFloat(godine.value);
-
-    let worth = novac + (novac * (stopaInflacije / 100));
+    let worth = money + (money * (stopaInflacije / 100));
 
 
-    for(let i = 1; i < godine; i++){
+    for(let i = 1; i < years; i++){
         worth += worth * (stopaInflacije / 100);
     }
 
@@ -21,6 +20,6 @@ function inflationCalculator(){
     
     const newElement = document.createElement('div');
     newElement.className = 'new-value';
-    newElement.innerText = `Današnjih ${novac}€ vrijedi isto kao ${worth}€ za ${godine} godina!`;
+    newElement.innerText = `Današnjih ${money}€ vrijedi isto kao ${worth}€ za ${years} godina!`;
     document.querySelector('.container').appendChild(newElement);
 }
