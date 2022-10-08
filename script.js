@@ -1,3 +1,5 @@
+document.addEventListener("click", inflationCalculator);
+
 function inflationCalculator(){
     let stopaInflacije = document.querySelector('#stopaInflacije');
     let novac = document.querySelector('#novac');
